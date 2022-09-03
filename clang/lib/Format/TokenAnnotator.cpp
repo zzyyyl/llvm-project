@@ -1888,7 +1888,7 @@ private:
       Contexts.back().ContextType = Context::CtorInitializer;
     } else if (Current.Previous && Current.Previous->is(TT_InheritanceColon)) {
       Contexts.back().ContextType = Context::InheritanceList;
-    } else if (Current.isOneOf(tok::r_paren, tok::greater, tok::comma)) {
+    } else if (Current.isOneOf(tok::r_paren, tok::greater)) {
       for (FormatToken *Previous = Current.Previous;
            Previous && Previous->isOneOf(tok::star, tok::amp);
            Previous = Previous->Previous) {
